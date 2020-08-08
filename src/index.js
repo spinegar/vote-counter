@@ -37,7 +37,7 @@ module.exports = function(ballots) {
    }, []);
 
 
-   const winner = counted.reduce((win, current) => {
+   const winner = counted.map((win, current) => {
       if (current.value > win.value) {
          return current;
       }

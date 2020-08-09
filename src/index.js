@@ -32,22 +32,13 @@ module.exports = function(ballots) {
                     return count;
                 }
                 return count + val;
-            }, 0)
+            }, 0);
 
         memo.push({ option: opt, value: value });
         return memo;
     }, []);
 
-
-    let winners = counted.map((win, current) => {
-        if (current.value > win.value) {
-            return current;
-        }
-
-        return win;
-    }, { value: 0 });
-
-    winners = _.orderBy(winners, 'value', 'desc');
+    const winners = _.orderBy(counted, 'value', 'desc');
 
     return {
         winner: winners,

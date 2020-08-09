@@ -18,5 +18,5 @@ if (!filePath) {
 
    const results = voteCounter(ballots);
 
-   console.log('WINNER', results.winner);
+   console.log('Results', results.results);
 }());

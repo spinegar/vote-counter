@@ -32,16 +32,16 @@ module.exports = function(ballots) {
                     return count;
                 }
                 return count + val;
-            }, 0);
+            }, 0)
 
         memo.push({ option: opt, value: value });
         return memo;
     }, []);
 
-    const winners = _.orderBy(counted, 'value', 'desc');
+    const results = _.orderBy(counted, 'value', 'desc');
 
     return {
-        winner: winners,
+        results: results,
         processedBallets: processed,
         optionValues: counted,
     };
